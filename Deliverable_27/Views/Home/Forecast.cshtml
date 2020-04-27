@@ -1,0 +1,20 @@
+﻿@model Deliverable_27.APIModels.Weather
+
+@{
+    ViewData["Title"] = "Forecast";
+}
+
+<h1>Forecast:</h1>
+
+<form action="Forecast" method="post">
+
+    @for (int i = 0; i < Model.Time.startPeriodName.Length; i++)
+    {
+        <p>
+            <h2>@Model.Time.startPeriodName[i]</h2>
+            <img src="@Model.Data.iconLink[i]" />
+            @Model.Data.temperature[i]<br />
+            @Model.Data.text[i]
+        </p>
+    }
+</form>
